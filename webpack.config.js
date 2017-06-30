@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-//array of the name of file we wann include seperate in this file
-//moduals dependencies
+
 const VENDOR_LIBS = [
   'react','lodash','redux','faker','react-redux','react-dom','react-router','react-input-range',
   'redux-form','redux-thunk'
@@ -28,5 +27,10 @@ module.exports = {
         test:/\.css$/
       }
     ]
-  }
+  },
+  plugins:[
+    new webpack.optimize.CommonsChunkPlugin({
+      name:'vender'
+    })
+  ]
 };
