@@ -461,19 +461,16 @@ var _ArtistMain2 = _interopRequireDefault(_ArtistMain);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-componentRoutes = {
+var componentRoutes = {
   component: _Home2.default,
   path: '/',
-  IndexRoute: { component: _ArtistMain2.default },
+  indexRoute: { component: _ArtistMain2.default },
   childRoutes: [{
     path: 'artists/new',
     getComponent: function getComponent(location, cd) {
-      //add some logic to fetch our component
-      //because asynch call -> promise
       __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 1514)).then(function (module) {
         return cd(null, module.default);
       });
-      //first argument error but after .then we are sure there is no error -> null
     }
   }, {
     path: 'artists/:id',
